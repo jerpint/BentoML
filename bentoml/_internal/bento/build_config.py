@@ -62,7 +62,7 @@ def _convert_python_version(py_version: t.Optional[str]) -> t.Optional[str]:
 @attr.frozen
 class DockerOptions:
     # Options for choosing a BentoML built-in docker images
-    distro: "t.Optional[DistroString]" = attr.field(
+    distro: t.Optional[str] = attr.field(
         validator=attr.validators.optional(
             attr.validators.in_(DOCKER_SUPPORTED_DISTROS)
         ),
